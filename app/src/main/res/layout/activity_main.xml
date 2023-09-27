@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/success"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/MainInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/check_img"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Успешно!"
+            android:textColor="#235C11"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_marginStart="15dp"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/MainInfo"
+        android:layout_width="363dp"
+        android:layout_height="298dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewQRType"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="358dp"
+            android:layout_height="0dp"
+            android:text="QR Type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/QRType"
+            android:layout_width="355dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+
+            app:layout_constraintStart_toStartOf="@+id/textViewQRType"
+            app:layout_constraintTop_toBottomOf="@+id/textViewQRType"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewQRContent"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_marginTop="100dp"
+            android:layout_width="358dp"
+            android:layout_height="0dp"
+            android:text="QR Content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/QRContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="115dp"
+            android:autoLink="web|email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewQRType"
+            app:layout_constraintTop_toBottomOf="@+id/textViewQRType"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Scanner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MainInfo" />
+
+    <Button
+        android:id="@+id/buttonFace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Face Detection"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+</androidx.constraintlayout.widget.ConstraintLayout>
